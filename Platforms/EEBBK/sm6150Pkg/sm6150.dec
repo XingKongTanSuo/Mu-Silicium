@@ -1,0 +1,8 @@
+[Defines]
+  DEC_SPECIFICATION                   = 0x00010005
+  PACKAGE_NAME                        = sm6150
+  PACKAGE_GUID                        = B4210ACE-00A5-4845-A4BC-15E423AE37CE
+  PACKAGE_VERSION                     = 0.1
+
+[Guids]
+  sm6150TokenSpaceGuid                = { 0xBA4A1CEC, 0x5EC3, 0x4F43, { 0xB5, 0x15, 0xE6, 0x16, 0xD5, 0xAA, 0x9B, 0xEE } }
