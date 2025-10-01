@@ -34,6 +34,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build UEFI for active devices
         run: bash ./setup_env.sh -p apt && bash ./build_uefi.sh -d sm6150 -r DEBUG
+        continue-on-error: true
+
+      - name: Cat logs
+        run: bash cat /home/runner/work/Mu-Silicium/Mu-Silicium/Build/BUILDLOG_sm6150Pkg.txt
 
       - name: Upload UEFI images
         uses: actions/upload-artifact@v4
