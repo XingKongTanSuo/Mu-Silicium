@@ -36,8 +36,12 @@ jobs:
         run: bash ./setup_env.sh -p apt && bash ./build_uefi.sh -d sm6150 -r DEBUG
         continue-on-error: true
 
-      - name: Cat logs
-        run: bash cat /home/runner/work/Mu-Silicium/Mu-Silicium/Build/BUILDLOG_sm6150Pkg.txt
+      - name: uploadlogs
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: ./BUILDLOG_*
+          compression-level: 9
 
       - name: Upload UEFI images
         uses: actions/upload-artifact@v4
