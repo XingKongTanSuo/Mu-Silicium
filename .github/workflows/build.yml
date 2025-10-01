@@ -11,6 +11,7 @@ on:
       - 'Platforms/**'
       - 'Silicon/**'
       - 'Silicium-ACPI'
+      - 'Temporary/**'
   workflow_dispatch:
   pull_request:
     types: [opened, reopened]
@@ -23,6 +24,7 @@ on:
       - 'Platforms/**'
       - 'Silicon/**'
       - 'Silicium-ACPI'
+      - 'Temporary/**'
 env:
   CI_BUILD: true
 jobs:
@@ -31,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build UEFI for active devices
-        run: bash ./setup_env.sh -p apt && bash ./build_active_devices.sh sm6150
+        run: bash ./setup_env.sh -p apt && bash ./build_uefi.sh -d sm6150 -r DEBUG
 
       - name: Upload UEFI images
         uses: actions/upload-artifact@v4
