@@ -63,7 +63,7 @@
   gQcomPkgTokenSpaceGuid.PcdPlatformType|"LA"
 
   # Dynamic RAM Start Address
-  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xA2322000
+  gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xA4500000
 
   # SD Card Slot
   gQcomPkgTokenSpaceGuid.PcdInitCardSlot|TRUE

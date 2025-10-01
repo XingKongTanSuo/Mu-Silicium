@@ -3,5 +3,5 @@
 EFI_GUID
 GetDeviceGuid ()
 {
-  return gsuryaTokenSpaceGuid;
+  return gi005dTokenSpaceGuid;
 }

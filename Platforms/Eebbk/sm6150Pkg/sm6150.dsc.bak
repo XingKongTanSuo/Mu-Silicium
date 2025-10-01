@@ -14,15 +14,15 @@
 #
 ################################################################################
 [Defines]
-  PLATFORM_NAME                  = surya
+  PLATFORM_NAME                  = sm6150
   PLATFORM_GUID                  = D5A334DF-5B96-485A-BBE0-308EFA44E1C6
   PLATFORM_VERSION               = 0.1
   DSC_SPECIFICATION              = 0x00010005
-  OUTPUT_DIRECTORY               = Build/suryaPkg
+  OUTPUT_DIRECTORY               = Build/sm6150Pkg
   SUPPORTED_ARCHITECTURES        = AARCH64
   BUILD_TARGETS                  = RELEASE|DEBUG
   SKUID_IDENTIFIER               = DEFAULT
-  FLASH_DEFINITION               = suryaPkg/surya.fdf
+  FLASH_DEFINITION               = sm6150Pkg/sm6150.fdf
   USE_CUSTOM_DISPLAY_DRIVER      = 1
   HAS_BUILD_IN_KEYBOARD          = 0
 
@@ -48,33 +48,34 @@
   gEmbeddedTokenSpaceGuid.PcdPrePiStackSize|0x00040000 
 
   # SmBios
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemManufacturer|"Xiaomi Inc"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"Poco X3 NFC"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"M2007J20CG"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"Poco_X3_NFC_M2007J20CG"
-  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"Poco X3 NFC"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemManufacturer|"Eebbk"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemModel|"sm6150"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailModel|"sm6150"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosSystemRetailSku|"S6_sm6150"
+  gSiliciumPkgTokenSpaceGuid.PcdSmbiosBoardModel|"S6"
 
   # Simple Frame Buffer
-  gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferWidth|2176
-  gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferHeight|1600
+  gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferWidth|1600
+  gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferHeight|2176
   gSiliciumPkgTokenSpaceGuid.PcdPrimaryFrameBufferColorDepth|32
 
   # Platform Pei
   gQcomPkgTokenSpaceGuid.PcdPlatformType|"LA"
+  gQcomPkgTokenSpaceGuid.PcdScheduleInterfaceAddr|0x9FC36578
 
   # Dynamic RAM Start Address
   gQcomPkgTokenSpaceGuid.PcdRamPartitionBase|0xA2322000
 
   # SD Card Slot
-  gQcomPkgTokenSpaceGuid.PcdInitCardSlot|TRUE
+  gQcomPkgTokenSpaceGuid.PcdInitCardSlot|FLASE
 
   # USB Controller
   gQcomPkgTokenSpaceGuid.PcdStartUsbController|TRUE
 
 [LibraryClasses]
-  DeviceMemoryMapLib|suryaPkg/Library/DeviceMemoryMapLib/DeviceMemoryMapLib.inf
-  DeviceConfigurationMapLib|suryaPkg/Library/DeviceConfigurationMapLib/DeviceConfigurationMapLib.inf
-  DeviceGuidLib|suryaPkg/Library/DeviceGuidLib/DeviceGuidLib.inf
+  DeviceMemoryMapLib|sm6150Pkg/Library/DeviceMemoryMapLib/DeviceMemoryMapLib.inf
+  DeviceConfigurationMapLib|sm6150Pkg/Library/DeviceConfigurationMapLib/DeviceConfigurationMapLib.inf
+  DeviceGuidLib|sm6150Pkg/Library/DeviceGuidLib/DeviceGuidLib.inf
   AcpiDeviceUpdateLib|SiliciumPkg/Library/AcpiDeviceUpdateLibNull/AcpiDeviceUpdateLibNull.inf
 
 !include MooreaPkg/MooreaPkg.dsc.inc
