@@ -40,9 +40,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: logs
-          path: ./BUILDLOG_*
+          path: /home/runner/work/Mu-Silicium/Mu-Silicium/Build/BUILDLOG_sm6150Pkg.txt
           compression-level: 9
-          continue-on-error: true
 
       - name: Upload UEFI images
         uses: actions/upload-artifact@v4
